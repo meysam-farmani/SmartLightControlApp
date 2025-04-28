@@ -115,8 +115,8 @@ class MqttManager {
                 .replace("\"", "")
                 .split(",")
 
-            val isOn = parts[0].split(":")[1].toBoolean()
-            val brightness = parts[1].split(":")[1].toInt()
+            val isOn = parts[0].split(":")[1].trim().toBoolean()
+            val brightness = parts[1].split(":")[1].trim().toInt()
 
             currentState = LightState(isOn, brightness)
         } catch (e: Exception) {
